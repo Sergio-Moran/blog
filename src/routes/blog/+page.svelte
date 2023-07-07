@@ -41,8 +41,20 @@ query GetIndexPosts($options: Options) {
 </script> -->
 
 <div class="grid w-full">
-  <div class="flex justify-center place-content-center text-white">
-    a
+  <div class="grid place-content-center">
+    <div class="card bordered w-max bg-white/50 shadow-xl">
+      <div class="card-body">
+        <h2 class="card-title">
+          Shoes!
+          <div class="badge badge-ghost">NEW</div>
+        </h2>
+        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <div class="card-actions justify-end">
+          <div class="badge badge-outline">Fashion</div>
+          <div class="badge badge-outline">Products</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
