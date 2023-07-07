@@ -23,7 +23,7 @@
 
 <div class="grid p-5">
   <Navbar {options} />
-  <div class="min-h-[92vh] {styles}">
+  <div class="min-h-[92vh] w-full {styles}">
     <slot />
   </div>
 </div>
