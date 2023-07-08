@@ -1,3 +1,3 @@
 <span class="material-icons-round">
-    person
+    recommend
     </span>

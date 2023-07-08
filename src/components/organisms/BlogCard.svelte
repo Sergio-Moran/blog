@@ -1,11 +1,12 @@
 <script>
   import Category from "../atom/icon/Category.svelte";
   import Person from "../atom/icon/Person.svelte";
+  import Reaction from "../atom/icon/Reaction.svelte";
   export let title = "";
   export let body = "";
-  export let principalBadge = "";
-  export let badgeOne = "";
-  export let badgeTwo = "";
+  export let principalBadge = "as";
+  export let badgeOne = "as";
+  export let badgeTwo = "as";
 </script>
 
 <div
@@ -14,7 +15,10 @@
   <div class="card-body">
     <h2 class="card-title">
       {title}
-      <div class="badge bg-green-300 border-green-600">{principalBadge}</div>
+      <div class="badge bg-green-300 border-green-600 badge-lg">
+        <Reaction />
+        {principalBadge}
+      </div>
     </h2>
     <p>
       {body}

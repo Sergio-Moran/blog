@@ -1,5 +1,6 @@
 <script>
-  import GeneralCard from "../../components/atom/cards/GeneralCard.svelte";
+  import BlogCard from "../../components/organisms/BlogCard.svelte";
+
 
 </script>
 <!-- <script>
@@ -46,7 +47,7 @@ query GetIndexPosts($options: Options) {
 
 <div class="grid w-full">
   <div class="grid place-content-center">
-    <GeneralCard />
+    <BlogCard />
   </div>
 </div>
 
