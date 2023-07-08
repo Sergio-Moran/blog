@@ -1,3 +1,7 @@
+<script>
+  import GeneralCard from "../../components/atom/cards/GeneralCard.svelte";
+
+</script>
 <!-- <script>
   import { onMount } from "svelte";
   // @ts-ignore
@@ -42,19 +46,7 @@ query GetIndexPosts($options: Options) {
 
 <div class="grid w-full">
   <div class="grid place-content-center">
-    <div class="card bordered w-max bg-white/50 shadow-xl">
-      <div class="card-body">
-        <h2 class="card-title">
-          Shoes!
-          <div class="badge badge-ghost">NEW</div>
-        </h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div class="card-actions justify-end">
-          <div class="badge badge-outline">Fashion</div>
-          <div class="badge badge-outline">Products</div>
-        </div>
-      </div>
-    </div>
+    <GeneralCard />
   </div>
 </div>
 
