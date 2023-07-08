@@ -1,12 +1,14 @@
 <script>
+  // @ts-nocheck
+
   import Category from "../atom/icon/Category.svelte";
   import Person from "../atom/icon/Person.svelte";
   import Reaction from "../atom/icon/Reaction.svelte";
   export let title = "";
   export let body = "";
-  export let principalBadge = "as";
-  export let badgeOne = "as";
-  export let badgeTwo = "as";
+  export let reactions = "as";
+  export let author;
+  export let categories = [];
 </script>
 
 <div
@@ -17,21 +19,23 @@
       {title}
       <div class="badge bg-green-300 border-green-600 badge-lg">
         <Reaction />
-        {principalBadge}
+        {reactions}
       </div>
     </h2>
     <p>
       {body}
     </p>
     <div class="card-actions justify-end">
-      <div class="badge badge-lg badge-ghost">
-        <Person />
-        {badgeOne}
-      </div>
       <div class="badge badge-lg bg-sky-300 border-sky-600">
-        <Category />
-        {badgeTwo}
+        <Person />
+        {author.name}
       </div>
+      {#each categories as data}
+        <div class="badge badge-lg bg-sky-300 border-sky-600" id={data.id}>
+          <Category />
+          {data.name}
+        </div>
+      {/each}
     </div>
   </div>
 </div>

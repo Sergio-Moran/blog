@@ -1,19 +1,27 @@
 <script>
-  import BlogCard from "../../components/organisms/BlogCard.svelte";
+  // @ts-nocheck
 
-
-</script>
-<!-- <script>
   import { onMount } from "svelte";
   // @ts-ignore
   import { GraphQLClient } from "$lib/graphql.js";
+  import BlogCard from "../../components/organisms/BlogCard.svelte";
 
   const GET_POSTS = `#gql
-query GetIndexPosts($options: Options) {
-  posts (options: $options) { 
+  query GetDatas($options:Options) {
+  posts (options:$options) {
     rows {
-    	id, title, content: body, reactions
-  	}
+      id,
+      title,
+      body,
+      reactions,
+      author {
+        name
+      },
+      categories {
+        id,
+        name
+      }
+    }
   }
 }
 `;
@@ -29,7 +37,7 @@ query GetIndexPosts($options: Options) {
       query: GET_POSTS,
       variables: {
         options: {
-          limit: 4,
+          limit: 10,
         },
       },
     });
@@ -40,14 +48,25 @@ query GetIndexPosts($options: Options) {
         posts: { rows },
       } = data;
       blogs = rows;
+      console.log(blogs);
     }
     console.log("mounted"); // logs mounted to the browser's console when component is loaded
   });
-</script> -->
+</script>
 
 <div class="grid w-full">
   <div class="grid place-content-center">
-    <BlogCard />
+    {#if blogs}
+      {#each blogs as blog}
+        <BlogCard
+          title={blog.title}
+          body={blog.body}
+          reactions={blog.reactions}
+          author={blog.author}
+          categories={blog.categories}
+        />
+      {/each}
+    {/if}
   </div>
 </div>
 
