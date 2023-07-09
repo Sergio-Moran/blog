@@ -72,7 +72,7 @@
 </script>
 
 <div class="grid w-full">
-  <div class="grid place-content-center">
+  <div class="grid place-content-center pr-4">
     {#if blogs}
       {#each blogs as blog}
         <BlogCard
