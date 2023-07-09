@@ -26,7 +26,7 @@
       {body}
     </p>
     <div class="card-actions justify-end">
-      <div class="badge badge-lg bg-sky-300 border-sky-600">
+      <div class="badge badge-lg bg-white border-white">
         <Person />
         {author.name}
       </div>
