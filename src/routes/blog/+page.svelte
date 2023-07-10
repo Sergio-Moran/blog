@@ -6,6 +6,7 @@
   import { GraphQLClient } from "$lib/graphql.js";
   import BlogCard from "../../components/organisms/BlogCard.svelte";
   import GeneralButton from "../../components/atom/buttons/GeneralButton.svelte";
+  import GeneralSelect from "../../components/atom/selects/GeneralSelect.svelte";
 
   /* Variables */
   let client;
@@ -74,6 +75,9 @@
 <div class="grid w-full">
   <div class="grid place-content-center pr-4">
     {#if blogs}
+      <GeneralSelect
+        options={["Author", "Category"]}
+      />
       {#each blogs as blog}
         <BlogCard
           title={blog.title}
