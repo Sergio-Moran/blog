@@ -1,8 +1,7 @@
 <script>
   // @ts-nocheck
   export let options = [];
-  export let selected = 'Pick some option';
-  $:console.log("Change Selected", selected);
+  export let selected = 'Select option';
 </script>
 
 <select
